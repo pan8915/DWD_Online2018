@@ -7,6 +7,14 @@ var count =0;
 
 var thesubmissions =[];
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+app.get('/templatetest', function(req, res) {
+    var data = {person: {name: "Pan", other: "name"}};
+    res.render('template.ejs', data);
+});
+
 app.get('/formpost', function (req,res){
     //res.send("you submitted"+ req.query.textfild);
     thesubmissions.push(req.query.textfield);
