@@ -10,10 +10,18 @@ var thesubmissions =[];
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.get('/templatetest', function(req, res) {
-    var data = {person: {name: "Pan", other: "name"}};
-    res.render('template.ejs', data);
+// use res.render to load up an ejs view file
+
+// index page
+app.get('/', function(req, res) {
+    res.render('pages/index');
 });
+
+// about page
+app.get('/about', function(req, res) {
+    res.render('pages/about');
+});
+
 
 app.get('/formpost', function (req,res){
     //res.send("you submitted"+ req.query.textfild);
