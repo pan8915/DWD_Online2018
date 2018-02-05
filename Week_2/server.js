@@ -35,6 +35,6 @@ app.get('/somethingelse', function (req, res) {
     res.send('Goodbye');
 })
 
-app.listen(8000, function () {
-    console.log('Example app listening on port 8000')
+app.listen(80, function () {
+    console.log('Example app listening on port 80')
 })
