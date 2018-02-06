@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var feedbackData = require('data/feedback.json');
+var feedbackData = require('feedback.json');
 
 app.use(express.static('public'));
 
