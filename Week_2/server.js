@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var feedbackData = require('data/feedback.json');
 
 app.use(express.static('public'));
 
@@ -15,11 +16,16 @@ app.set('view engine', 'ejs');
 // index page
 app.get('/', function(req, res) {
     res.render('pages/index');
+
 });
 
 // about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
+});
+
+app.get('/api', function(req,res){
+    res.json(feedbackData);
 });
 
 
