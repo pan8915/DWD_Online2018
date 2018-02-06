@@ -7,6 +7,7 @@ var count =0;
 
 var thesubmissions =[];
 var nameThesubmissions =[];
+var titleThesubmissions =[];
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -27,18 +28,19 @@ app.get('/about', function(req, res) {
 
 app.get('/formpost', function (req,res){
     //res.send("you submitted"+ req.query.textfild);
-    nameThesubmissions.push(req.query.fullname);
-    thesubmissions.push(req.query.textfield);
+    nameThesubmissions.push("Name:"+req.query.fullname);
+    titleThesubmissions.push("Title:" + req.query.titletextfield);
+    thesubmissions.push("Message:" + req.query.textfield);
 
     res.redirect('/display');
 })
 
 app.get('/display', function(req,res){
-    var htmlout = "<html><body><h1>";
+    var htmlout = "<html><body><h3>";
     for ( var i = 0; i <thesubmissions.length; i++) {
-        htmlout = htmlout + nameThesubmissions[i] + "<br>" + thesubmissions[i] ;
+        htmlout = "<h2>Thank you!</h2>"+ htmlout + nameThesubmissions[i] + "<br>" + thesubmissions[i] ;
     }
-    htmlout =htmlout + "</h1></body></html>";
+    htmlout =htmlout + "</h3></body></html>";
     res.send(htmlout);
 })
 
