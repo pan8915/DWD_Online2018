@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var feedbackData = require('feedback.json');
 
 app.use(express.static('public'));
 
@@ -22,10 +21,6 @@ app.get('/', function(req, res) {
 // about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
-});
-
-app.get('/api', function(req,res){
-    res.json(feedbackData);
 });
 
 
