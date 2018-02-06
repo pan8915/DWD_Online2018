@@ -38,7 +38,7 @@ app.get('/formpost', function (req,res){
 app.get('/display', function(req,res){
     var htmlout = "<html><body><h3>";
     for ( var i = 0; i <thesubmissions.length; i++) {
-        htmlout = "<h2>Thank you!</h2>"+ htmlout + nameThesubmissions[i] + "<br>" + thesubmissions[i] ;
+        htmlout = "<h2>Thank you!</h2>"+ htmlout + nameThesubmissions[i]+ "<br>" + titleThesubmissions[i]+ "<br>" + thesubmissions[i] ;
     }
     htmlout =htmlout + "</h3></body></html>";
     res.send(htmlout);
